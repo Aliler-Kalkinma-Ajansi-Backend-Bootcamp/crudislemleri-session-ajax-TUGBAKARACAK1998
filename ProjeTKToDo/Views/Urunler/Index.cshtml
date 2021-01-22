@@ -1,0 +1,67 @@
+﻿@using Data.Models
+@model List<Urunler>
+
+@{
+    ViewData["Title"] = "Urunler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+</head>
+<body>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Ürün Adı</th>
+            <th>Ürün Kategorisi</th>
+            <th>Ürün Fiyatı</th>
+            <th>Ürün Stok Sayısı</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UrunId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Urunad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UrunKategori)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UrunFiyat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UrunStokSayisi)
+                </td>
+
+
+                <td>
+                    @Html.ActionLink("Güncelle", "Guncelle", new { id =item.UrunId }, new { @class = "btn btn-success" })
+                </td>
+
+                <td>
+                    @Html.ActionLink("Sil", "Sil", new { id = item.UrunId }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+    </table>
+    <p>
+     
+        <a href="/Urunler/UrunEkle" class="btn btn-primary">Ürün Ekle</a>
+    </p>
+</body>
+</html>

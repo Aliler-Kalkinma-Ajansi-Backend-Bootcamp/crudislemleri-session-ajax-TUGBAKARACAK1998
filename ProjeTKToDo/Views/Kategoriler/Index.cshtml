@@ -1,0 +1,58 @@
+﻿@using Data.Models
+@model List<Kategoriler>
+@{
+    ViewData["Title"] = "Kategoriler";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+</head>
+<body>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Id</th>
+            <th>Ad</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KategoriId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KategoriAd)
+                </td>
+
+
+                <td>
+                    @Html.ActionLink("Güncelle", "Edit", new { id = item.KategoriId }, new { @class = "btn btn-success" })
+                </td>
+
+                <td>
+                    @Html.ActionLink("Sil", "Delete", new { id = item.KategoriId }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+        }
+
+
+    </table>
+    <p>
+        @*@Html.ActionLink("Kategori Ekle", "Insert")*@
+        <a href="/Kategoriler/Kategori" class="btn btn-primary">Kategori Ekle</a>
+    </p>
+</body>
+</html>
+
+

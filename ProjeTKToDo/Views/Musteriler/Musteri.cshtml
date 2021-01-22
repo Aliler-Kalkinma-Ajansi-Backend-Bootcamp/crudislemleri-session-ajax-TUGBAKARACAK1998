@@ -1,0 +1,82 @@
+﻿<!--@using Data.Models
+@model List<Musteriler>
+@{
+    ViewData["Title"] = "Musteri";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}-->
+
+@*<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Email</th>
+        <th>Sil</th>
+        <th>Guncelle</th>
+
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Ad</td>
+            <td>@item.Soyad</td>
+            <td>@item.Email</td>
+            <td>Sil</td>
+            <td>Güncelle</td>
+        </tr>
+    }*@
+
+
+@*</table>*@
+<!--<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Insert")
+    </p>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>Email</th>
+            <th>Sil</th>
+            <th>Guncelle</th>
+
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Soyad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+              
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                 
+                    @Html.ActionLink("Delete", "Delete", new {  id=item.Id  })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>-->
+
